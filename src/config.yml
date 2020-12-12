@@ -1,0 +1,5 @@
+lang: en
+spawn-spread: 15
+hunter-debuff-length: 5
+compass-update-interval: 3
+start-world: world
