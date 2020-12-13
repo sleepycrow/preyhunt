@@ -77,7 +77,7 @@ public class Preyhunt extends JavaPlugin implements Listener {
         PotionEffect slow = new PotionEffect(PotionEffectType.SLOW, hunterDebuffLength * 20, 1);
         PotionEffect blind = new PotionEffect(PotionEffectType.BLINDNESS, hunterDebuffLength * 20, 1);
         for(Player player : hunters){
-            resetPlayer(player, true);
+            resetPlayer(player);
             player.setGameMode(GameMode.SURVIVAL);
             player.getInventory().addItem(compass);
             player.addPotionEffect(slow);
@@ -87,7 +87,7 @@ public class Preyhunt extends JavaPlugin implements Listener {
         // Prepare the prey
         ItemStack preyFood = new ItemStack(Material.COOKED_PORKCHOP, 2);
         for(Player player : prey) {
-            resetPlayer(player, true);
+            resetPlayer(player);
             player.setGameMode(GameMode.SURVIVAL);
             player.getInventory().addItem(preyFood);
         }
@@ -137,7 +137,7 @@ public class Preyhunt extends JavaPlugin implements Listener {
         }
     }
 
-    private void resetPlayer(Player player, boolean fullReset){
+    private void resetPlayer(Player player){
         player.setHealth(20);
         player.setFoodLevel(20);
         player.getInventory().clear();
@@ -145,13 +145,11 @@ public class Preyhunt extends JavaPlugin implements Listener {
         player.setBedSpawnLocation(null);
 
         // Revoke all player advancements
-        if(fullReset) {
-            Iterator<Advancement> advancements = Bukkit.getServer().advancementIterator();
-            while (advancements.hasNext()) {
-                AdvancementProgress progress = player.getAdvancementProgress(advancements.next());
-                for (String s : progress.getAwardedCriteria()) {
-                    progress.revokeCriteria(s);
-                }
+        Iterator<Advancement> advancements = Bukkit.getServer().advancementIterator();
+        while (advancements.hasNext()) {
+            AdvancementProgress progress = player.getAdvancementProgress(advancements.next());
+            for (String s : progress.getAwardedCriteria()) {
+                progress.revokeCriteria(s);
             }
         }
     }
