@@ -17,7 +17,7 @@ public class messages_pl extends ListResourceBundle {
                 // Command usage messages
                 {"generalUsage", "/mh [help|start|end|spec|join]"},
                 {"usageSpec", "/mh spec <gracz>"},
-                {"usageJoin", "/mh join <hunters|prey>"},
+                {"usageJoin", "/mh join <hunters|prey|spec>"},
 
                 // Status command output
                 {"statusGameActive", "§eGra jest §aaktualnie w toku."},
@@ -28,6 +28,7 @@ public class messages_pl extends ListResourceBundle {
                 // Announcements
                 {"annPlayerJoinedPrey", "§e%s dołączył do łowów jako §cofiara§e!"},
                 {"annPlayerJoinedHunters", "§e%s dołączył do łowów jako §cłowca§e!"},
+                {"annPlayerJoinedSpecs", "§e%s dołączył do łowów jako §awidz§e!"},
                 {"annPreyDisqualified", "§e%s został zdyskwalifikowany! Pozostało %d ofiar."},
                 {"annCompassUpdated", "§eTwój kompas wskazuje teraz na %s."},
                 {"annCompassNoPlayers", "§cNie znaleziono żadnych graczy w pobliżu."},

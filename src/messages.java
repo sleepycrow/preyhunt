@@ -17,7 +17,7 @@ public class messages extends ListResourceBundle {
                 // Command usage messages
                 {"generalUsage", "/mh [help|start|end|spec|join]"},
                 {"usageSpec", "/mh spec <player>"},
-                {"usageJoin", "/mh join <hunters|prey>"},
+                {"usageJoin", "/mh join <hunters|prey|spec>"},
 
                 // Status command output
                 {"statusGameActive", "§eThe game is §acurrently in progress."},
@@ -28,6 +28,7 @@ public class messages extends ListResourceBundle {
                 // Announcements
                 {"annPlayerJoinedPrey", "§e%s joined the manhunt as a §cprey§e!"},
                 {"annPlayerJoinedHunters", "§e%s joined the manhunt as a §chunter§e!"},
+                {"annPlayerJoinedSpecs", "§e%s joined the manhunt as a §aspectator§e!"},
                 {"annPreyDisqualified", "§e%s has been disqualified! There are %d prey remaining."},
                 {"annCompassUpdated", "§eYour compass is now pointing at %s."},
                 {"annCompassNoPlayers", "§cNo players could be found nearby."},

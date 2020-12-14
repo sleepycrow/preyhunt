@@ -1,9 +1,9 @@
 name: Preyhunt
-version: 1.0.0
+version: 1.0.1
 author: sleepycrow
 main: pl.msrv.preyhunt.Preyhunt
 api-version: 1.16
 commands:
   mh:
     description: The main manhunt command.
-    usage: /mh [help|start|end|join|spec]
+    usage: /mh [help]

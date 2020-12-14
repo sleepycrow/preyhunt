@@ -148,14 +148,27 @@ public class CommandMh implements CommandExecutor {
 
         if(args.length >= 2){
             if(args[1].equalsIgnoreCase("hunters")){
+                plugin.hunters.remove(player);
                 plugin.prey.remove(player);
+
                 plugin.hunters.add(player);
                 plugin.getServer().broadcastMessage(I18n.tl("annPlayerJoinedHunters", player.getDisplayName()));
+
                 return true;
             }else if(args[1].equalsIgnoreCase("prey")){
                 plugin.hunters.remove(player);
+                plugin.prey.remove(player);
+
                 plugin.prey.add(player);
                 plugin.getServer().broadcastMessage(I18n.tl("annPlayerJoinedPrey", player.getDisplayName()));
+
+                return true;
+            }else if(args[1].equalsIgnoreCase("spec") || args[1].equalsIgnoreCase("specs")){
+                plugin.hunters.remove(player);
+                plugin.prey.remove(player);
+
+                plugin.getServer().broadcastMessage(I18n.tl("annPlayerJoinedSpecs", player.getDisplayName()));
+
                 return true;
             }
         }
